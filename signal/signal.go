@@ -9,8 +9,7 @@ type Receiver func(c context.Context, args ...interface{}) error
 
 type Signal struct {
 	sync.RWMutex
-	Receivers  []Receiver
-	StrictMode bool
+	Receivers []Receiver
 }
 
 func NewSignal() *Signal {

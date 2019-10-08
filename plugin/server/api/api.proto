@@ -1,0 +1,16 @@
+syntax = "proto3";
+package proto;
+
+message CallReq {
+    string method = 1;
+    string args = 2;
+}
+
+message CallReply {
+}
+
+
+service TaskService {
+    rpc Call (CallReq) returns (CallReply);
+    // TODO: ping pong for health check
+}

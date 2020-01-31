@@ -1,0 +1,24 @@
+syntax = "proto3";
+package proto;
+
+message GetReq {
+    string name = 1;
+}
+
+message GetReply {
+}
+
+message CallReq {
+    string name = 1;
+    bytes args = 2;
+}
+
+message CallReply {
+    bytes data = 1;
+}
+
+
+service Plugin {
+    rpc Get (GetReq) returns (GetReply);
+    rpc Call (CallReq) returns (CallReply);
+}

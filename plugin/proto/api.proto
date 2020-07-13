@@ -1,6 +1,12 @@
 syntax = "proto3";
 package proto;
 
+message PingReq {
+}
+
+message PingReply {
+}
+
 message GetReq {
     string name = 1;
 }
@@ -19,6 +25,7 @@ message CallReply {
 
 
 service Plugin {
+    rpc Ping (PingReq) returns (PingReply);
     rpc Get (GetReq) returns (GetReply);
     rpc Call (CallReq) returns (CallReply);
 }
